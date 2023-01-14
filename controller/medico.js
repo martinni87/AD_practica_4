@@ -45,16 +45,16 @@ function printTableStruct(){
 function printResponse(index,response){
     // console.log(response[index])
     let fila =  `<tr>
-                    <td id='index_` + index `>` + response[index]["numero_colegiado"] + `</td>
-                    <td id='index_` + index `>` + response[index]["dni"] + `</td>
-                    <td id='index_` + index `>` + response[index]["nombre"] + `</td>
-                    <td id='index_` + index `>` + response[index]["apellido1"] + `</td>
-                    <td id='index_` + index `>` + response[index]["apellido2"] + `</td>
-                    <td id='index_` + index `>` + response[index]["telefono"] + `</td>
-                    <td id='index_` + index `>` + response[index]["especialidad"] + `</td>
-                    <td id='index_` + index `>` + response[index]["horario"] + `</td>
-                    <td id='index_` + index `><button id="delete_button`+index+`" name="`+index+`" class="btn btn-danger" >-</button></td>
-                    <td id='index_` + index `><button id="edit_button`+index+`" name="`+index+`" class="btn btn-warning">Editar</button></td>
+                    <td>` + response[index]["numero_colegiado"] + `</td>
+                    <td>` + response[index]["dni"] + `</td>
+                    <td>` + response[index]["nombre"] + `</td>
+                    <td>` + response[index]["apellido1"] + `</td>
+                    <td>` + response[index]["apellido2"] + `</td>
+                    <td>` + response[index]["telefono"] + `</td>
+                    <td>` + response[index]["especialidad"] + `</td>
+                    <td>` + response[index]["horario"] + `</td>
+                    <td><button id="delete_button`+index+`" name="`+index+`" class="btn btn-danger" >-</button></td>
+                    <td><button id="edit_button`+index+`" name="`+index+`" class="btn btn-warning">Editar</button></td>
                 </tr>`;
     $("#ajax_response").append(fila);
 }
