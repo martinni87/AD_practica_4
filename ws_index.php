@@ -1,8 +1,7 @@
 <?php
-echo "start<br>";
 include_once("config/Connection.php");
-include_once("config/Medico.php");
-echo "Include done<br>";
+include_once("models/Medico.php");
+include_once("config/Methods.php");
 
 //Atributos para PDO
 $mysqlHost = "localhost";
@@ -10,17 +9,15 @@ $dbHostName = "hospital";
 $dbUserName = "root";
 $dbPassword = "";
 
-echo "Atributes done<br>";
-
 $connection = Connection::tryConnection($mysqlHost, $dbHostName, $dbUserName, $dbPassword);
-
-echo "Connection done <br>";
 
 $medico = new Medico();
 
-echo "medico created <br>";
-
-$medico -> getAllData($connection);
-
-echo "End";
+switch (strtolower($_SERVER['REQUEST_METHOD'])) {
+    case "get":
+        echo $medico -> getAllData($connection);
+        break;
+    default:
+        Methods::console_log("Nothing",true);
+}
 ?>

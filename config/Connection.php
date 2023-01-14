@@ -11,7 +11,8 @@ class Connection implements authenticate{
             $connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $connection;
         } catch (PDOException $e) {
-            echo 'Error en la conexión a la BD: ' . $e -> getMessage();
+            http_response_code(500);
+            die($e -> getMessage());
         }
 
     }
