@@ -13,11 +13,22 @@ $connection = Connection::tryConnection($mysqlHost, $dbHostName, $dbUserName, $d
 
 $medico = new Medico();
 
+$id = $_POST["user_id"];
+
 switch (strtolower($_SERVER['REQUEST_METHOD'])) {
     case "get":
         echo $medico -> getAllData($connection);
         break;
+    case "post":
+        echo $medico -> setNewData($connection);
+        break;
+    case "put":
+        echo $medico -> editData($connection);
+        break;
+    case "del":
+        echo $medico -> deleteData($connection,$id);
+        break;
     default:
-        Methods::console_log("Nothing",true);
+        Methods::console_log("Error",true);
 }
 ?>
