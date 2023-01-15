@@ -3,7 +3,11 @@ $(document).ready(function(){
         $.ajax({
             method: "GET",
             url:"ws_index.php",
-            // data:{},
+            data:{
+                nombre: $("#nombre").val(),
+                apellido1: $("#apellido1").val(),
+                numero_colegiado: $("#numero_colegiado").val(),
+            },
             dataType: "json",
         })
         .done(function(response){
@@ -11,11 +15,11 @@ $(document).ready(function(){
             printTableStruct();
             Object.keys(response).forEach((element) => {
             // console.log(element + " -> " + response[element]["nombre"])
-            printResponse(element,response);
+                printResponse(element,response);
             });
         })
         .fail(function(jqXHR,textStatus,error){
-            console.log("Error en conexión ajax");
+            console.log("Error en conexión ajax en método get");
         });
     });
 
