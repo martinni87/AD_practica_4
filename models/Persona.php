@@ -6,18 +6,18 @@ class Persona{
     private $apellido1;
     private $apellido2;
     private $telefono;
-    private $sexo;
+    // private $sexo;
     private $user_id;
 
     //Constructor
-    public function __construct($id = "", $dni = "", $nombre = "", $apellido1 = "", $apellido2 = "", $telefono = "", $sexo = "", $user_id = ""){
+    public function __construct($id = "", $dni = "", $nombre = "", $apellido1 = "", $apellido2 = "", $telefono = "", /*$sexo = "",*/ $user_id = ""){
         $this -> id = $id;
         $this -> dni = $dni;
         $this -> nombre = $nombre;
         $this -> apellido1 = $apellido1;
         $this -> apellido2 = $apellido2;
         $this -> telefono = $telefono;
-        $this -> sexo = $sexo;
+        // $this -> sexo = $sexo;
         $this -> user_id = $user_id;
     }
 
@@ -40,9 +40,9 @@ class Persona{
     public function getTelefono(){
         return $this -> telefono;
     }
-    public function getSexo(){
-        return $this -> sexo;
-    }
+    // public function getSexo(){
+    //     return $this -> sexo;
+    // }
     public function getUser_id(){
         return $this -> user_id;
     }
@@ -66,9 +66,9 @@ class Persona{
     public function setTelefono($telefono){
         $this -> telefono = $telefono;
     }
-    public function setSexo($sexo){
-        $this -> sexo = $sexo;
-    }
+    // public function setSexo($sexo){
+    //     $this -> sexo = $sexo;
+    // }
     public function setUser_id($user_id){
         $this -> user_id = $user_id;
     }

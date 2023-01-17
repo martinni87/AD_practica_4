@@ -20,7 +20,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
         $numero_colegiado   = $_GET["numero_colegiado"];
 
         //Instanciamos filtros de médico
-        $filters = new Medico("","",$nombre,$apellido1,"","","","",$numero_colegiado,"","");
+        $filters = new Medico("","",$nombre,$apellido1,"","",/*"",*/"",$numero_colegiado,"","");
 
         echo $filters -> getData($connection, $filters);
 
@@ -37,7 +37,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
         $horario_id         = $_POST["horario_id"];
 
         //Instanciamos un objeto de médico con los datos introducidos
-        $data = new Medico("",$dni,$nombre,$apellido1,$apellido2,$telefono,$sexo,$user_id,$numero_colegiado,$especialidad_id,$horario_id);
+        $data = new Medico("",$dni,$nombre,$apellido1,$apellido2,$telefono,/*$sexo,*/"",$numero_colegiado,$especialidad_id,$horario_id);
 
         echo $data -> setNewData($connection, $data);
 

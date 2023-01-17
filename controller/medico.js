@@ -34,6 +34,7 @@ $(document).ready(function(){
     $("#submit_new").click(function(){
         $.ajax({
             method: "POST",
+            action: "post",
             url:"ws_index.php",
             data:{
                 numero_colegiado: $("#numero_colegiado").val(),
@@ -48,9 +49,7 @@ $(document).ready(function(){
             dataType: "json",
         })
         .done(function(response){
-            // Object.keys(response).forEach((element) => {
-                $("#ajax_response").html(/*element + " -> " + response[element])}*/response)})/*;*/
-        // })
+                $("#ajax_response").html(response)})
         .fail(function(jqXHR,textStatus,error){
             $("#ajax_response").html("Error en conexión ajax en método post");
         });
