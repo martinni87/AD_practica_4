@@ -9,12 +9,12 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Práctica 2.1 Desarrollo de Interfaces</title>
     <script src="vendor/jquery-3.6.1.min.js"></script>
-    <script src="controllers/medico.js"></script>
-    <link rel="stylesheet" href="./css/main.css">
+    <script src="controller/medico.js"></script>
 </head>
 <body>
     <fieldset>
         <legend>Formulario Médicos</legend>
+        <!-- Campos a rellenar -->
         <label for="numero_colegiado">Nº Colegiado: </label><input type="number" name="numero_colegiado" id="numero_colegiado" placeholder="146502" title="Escribe un número de colegiado">
         <label for='dni'>DNI:</label><input type='text' name='dni' id='dni' placeholder='01234567A' title='Escribe un DNI'>
         <label for="nombre">Nombre: </label><input type="text" name="nombre" id="nombre" placeholder="Juan Antonio" title="Escribe un nombre"><br><br>
@@ -23,10 +23,12 @@
         <label for="telefono">Teléfono: </label><input type="tel" name="telefono" id="telefono" placeholder="(+34)966670113" title="Escribe un número de teléfono"><br><br>
         <label for="especialidad_id">ID Especialidad: </label><input type="number" name="especialidad_id" id="especialidad_id" placeholder="1" title="Escribe el ID de la especialidad">
         <label for="horario_id">ID Horario: </label><input type="number" name="horario_id" id="horario_id" placeholder="2" title="Escribe el ID del turno"><br><br>
+        <!-- Botones de acciones Guardar registro y Cancelar y volver a vista previa -->
         <button type='submit' name="submit" id="submit_new" class="btn btn-secondary">Enviar</button>
-        <button type='reset' name='reset' id='reset' class="btn btn-secondary">Cancelar</button>
+        <button type='reset' name='reset' id='reset_button' class="btn btn-secondary">Cancelar</button>
         <button type="button" name="return" id="return" class="btn btn-secondary" onclick="location.href='index.html'">Volver</button>
     </fieldset>
-    <div id="response"></div>
+    <!-- Contenedor ajax_response donde se la respuesta favorable o desfavorable si el registro ha podido o no realizarse -->
+    <div id="ajax_response"></div>
 </body>
 </html>
