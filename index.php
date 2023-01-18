@@ -12,18 +12,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="vendor/jquery-3.6.1.min.js"></script>
     <script src="controller/medicos.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    
 </head>
 <body>
     <header class="header" id="header">
         <nav class="navbar" id="navbar">
             <form action="config/login.php" method="post">
                 <fieldset>
-                    <legend>Login</legend>
-                    <!-- Pista a efectos de la práctica: usuario = user, contraseña = 1234 -->
-                    <label for="user">Usuario:</label><input type="text" name="user" class="std_input" id="user" placeholder="user" title="Introduzca un usuario" required>
-                    <label for="password">Contraseña:</label><input type="password" name="password" class="std_input" id="password" placeholder="******" title="Introduzca una contraseña" required>
-                    <input type="submit" name="submit" class="btn btn-primary" id="submit" value="Acceder">
-                    <input type="reset" name="reset" class="btn btn-danger" id="reset" value="Limpiar" onclick="location.href='./index.php?msg'">
+                    <div class="login_item"><legend>Login</legend></div>
+                    <!-- Pista a efectos de la práctica: usuario = admin, contraseña = 1234 -->
+                    <div class="login_item"><label for="user">Usuario</label><input type="text" name="user" class="std_input" id="user" placeholder="user" title="Introduzca un usuario" required></div>
+                    <div class="login_item"><label for="password">Contraseña</label><input type="password" name="password" class="std_input" id="password" placeholder="******" title="Introduzca una contraseña" required></div>
+                    <div class="login_item">
+                        <input type="submit" name="submit" class="btn btn-primary" id="submit" value="Acceder">
+                        <input type="reset" name="reset" class="btn btn-danger" id="reset" value="Limpiar" onclick="location.href='./index.php?msg'">
+                    </div>
                 </fieldset>
                 <div name="msg" id="msg"><?php $msg = $_GET["msg"]; echo $msg; ?></div>
             </form>

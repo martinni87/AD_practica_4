@@ -1,0 +1,35 @@
+html, body
+{
+    background-color: grey !important;
+    margin:2em;
+    display: flex;
+    justify-content: center;
+}
+legend, label
+{
+    font-weight: bold;
+}
+input
+{
+    display: flex;
+    border-radius: 10px;
+    padding-left: 5px;
+}
+form
+{
+    border-radius: 10px;
+    background-color: aliceblue;
+    box-shadow: 0 0 15px black;
+}
+.login_item
+{
+    display:grid;
+    margin: 2em;
+    text-align: center;
+    
+}
+
+.btn
+{
+    margin: 1em;
+}
