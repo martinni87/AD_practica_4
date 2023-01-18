@@ -12,8 +12,9 @@ $dbPassword = "";
 //Ejecutamos conexión
 $connection = Connection::tryConnection($mysqlHost, $dbHostName, $dbUserName, $dbPassword);
 
-switch (strtolower($_SERVER['REQUEST_METHOD'])) {
-    case "get":
+// switch (strtolower($_SERVER['REQUEST_METHOD'])) {
+switch (strtolower($_GET["action"])){
+    case "read":
         //Parametros Ajax si los hubiera
         $nombre             = $_GET["nombre"];
         $apellido1          = $_GET["apellido1"];
@@ -25,29 +26,32 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
         echo $filters -> getData($connection, $filters);
 
         break;
-    case "post":
+    case "create":
         //Parametros Ajax
-        $numero_colegiado   = $_POST["numero_colegiado"];
-        $dni                = $_POST["dni"];
-        $nombre             = $_POST["nombre"];
-        $apellido1          = $_POST["apellido1"];
-        $apellido2          = $_POST["apellido2"];
-        $telefono           = $_POST["telefono"];
-        $especialidad_id    = $_POST["especialidad_id"];
-        $horario_id         = $_POST["horario_id"];
+        $numero_colegiado   = $_GET["numero_colegiado"];
+        $dni                = $_GET["dni"];
+        $nombre             = $_GET["nombre"];
+        $apellido1          = $_GET["apellido1"];
+        $apellido2          = $_GET["apellido2"];
+        $telefono           = $_GET["telefono"];
+        $especialidad_id    = $_GET["especialidad_id"];
+        $horario_id         = $_GET["horario_id"];
 
         //Instanciamos un objeto de médico con los datos introducidos
-        $data = new Medico("",$dni,$nombre,$apellido1,$apellido2,$telefono,/*$sexo,*/"",$numero_colegiado,$especialidad_id,$horario_id);
+        // $data = new Medico("",$dni,$nombre,$apellido1,$apellido2,$telefono,/*$sexo,*/"",$numero_colegiado,$especialidad_id,$horario_id);
 
-        echo $data -> setNewData($connection, $data);
+        // echo $data -> setNewData($connection, $data);
+
+        echo $nombre;
+
 
         break;
-    case "put":
+    case "update":
 
         echo $medico -> editData($connection);
 
         break;
-    case "del":
+    case "delete":
 
         echo $medico -> deleteData($connection,$id);
 

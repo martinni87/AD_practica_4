@@ -2,7 +2,7 @@ $(document).ready(function(){
     $("#search_button").click(function(){
         $.ajax({
             method: "GET",
-            url:"ws_medicos.php",
+            url:"ws_medicos.php?action=read",
             data:{
                 nombre: $("#nombre").val(),
                 apellido1: $("#apellido1").val(),
@@ -19,7 +19,7 @@ $(document).ready(function(){
             });
         })
         .fail(function(jqXHR,textStatus,error){
-            console.log("Error en conexión ajax en método get");
+            console.log("Error en conexión ajax en método READ");
         });
     });
 
@@ -34,7 +34,7 @@ $(document).ready(function(){
     $("#submit_new").click(function(){
         $.ajax({
             method: "POST",
-            url:"ws_medicos.php",
+            url:"ws_medicos.php?action=create",
             data:{
                 numero_colegiado: $("#numero_colegiado").val(),
                 dni: $("#dni").val(),
@@ -50,14 +50,14 @@ $(document).ready(function(){
         .done(function(response){
                 $("#ajax_response").html(response)})
         .fail(function(jqXHR,textStatus,error){
-            $("#ajax_response").html("Error en conexión ajax en método post");
+            $("#ajax_response").html("Error en conexión ajax en método CREATE");
         });
     });
 
     $("#submit_edit").click(function(){
         $.ajax({
-            method: "PUT",
-            url:"ws_medicos.php",
+            method: "POST",
+            url:"ws_medicos.php?action=update",
             data:{
 
             },
@@ -72,14 +72,14 @@ $(document).ready(function(){
             });
         })
         .fail(function(jqXHR,textStatus,error){
-            console.log("Error en conexión ajax en método put");
+            console.log("Error en conexión ajax en método UPDATE");
         });
     });
 
     $("#delete_reg").click(function(){
         $.ajax({
-            method: "DEL",
-            url:"ws_medicos.php",
+            method: "POST",
+            url:"ws_medicos.php?action=delete",
             data:{
                 dni:$("#dni").val,
             },
@@ -94,7 +94,7 @@ $(document).ready(function(){
             });
         })
         .fail(function(jqXHR,textStatus,error){
-            console.log("Error en conexión ajax en método delete");
+            console.log("Error en conexión ajax en método DELETE");
         });
     });
 });
