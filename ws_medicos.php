@@ -28,25 +28,23 @@ switch (strtolower($_GET["action"])){
         break;
     case "create":
         //Parametros Ajax introducidos
-        $numero_colegiado   = $_GET["numero_colegiado"];
-        $dni                = $_GET["dni"];
-        $nombre             = $_GET["nombre"];
-        $apellido1          = $_GET["apellido1"];
-        $apellido2          = $_GET["apellido2"];
-        $telefono           = $_GET["telefono"];
-        $especialidad_id    = $_GET["especialidad_id"];
-        $horario_id         = $_GET["horario_id"];
+        // $numero_colegiado   = $_GET["numero_colegiado"];
+        // $dni                = $_GET["dni"];
+        // $nombre             = $_GET["nombre"];
+        // $apellido1          = $_GET["apellido1"];
+        // $apellido2          = $_GET["apellido2"];
+        // $telefono           = $_GET["telefono"];
+        // $especialidad_id    = $_GET["especialidad_id"];
+        // $horario_id         = $_GET["horario_id"];
 
-        $array = array();
-        $array["nombre"] = $numero_colegiado;
+        // $array = array();
+        // $array["nombre"] = $numero_colegiado;
         //Instanciamos un objeto de médico con los datos introducidos
         // $data = new Medico("",$dni,$nombre,$apellido1,$apellido2,$telefono,/*$sexo,*/"",$numero_colegiado,$especialidad_id,$horario_id);
 
         // echo $data -> setNewData($connection, $data);
 
-        echo json_encode($array);
-
-
+        // echo json_encode($array);
         break;
     case "update":
 
@@ -55,7 +53,7 @@ switch (strtolower($_GET["action"])){
         break;
     case "delete":
 
-        echo $medico -> deleteData($connection,$id);
+        echo $medico -> deleteData($connection,$dni);
 
         break;
     case "reset":

@@ -77,11 +77,15 @@ $(document).ready(function(){
     });
 
     $("#delete_reg").click(function(){
+        $("button").click(function() {
+            alert(this.id); // or alert($(this).attr('id'));
+        });
+        console.log (id);
         $.ajax({
             method: "POST",
             url:"ws_medicos.php?action=delete",
             data:{
-                dni:$("#dni").val,
+                id:$("#dni").val,
             },
             dataType: "json",
         })
@@ -123,7 +127,7 @@ function printTableStruct(){
 
 function printResponse(index,response){
     // console.log(response[index])
-    let fila =  `<tr id='`+response[index]["user_id"]+`'>
+    let fila =  `<tr id='`+index+`'>
                     <td name="numero_colegiado">` + response[index]["numero_colegiado"] + `</td>
                     <td name="dni">` + response[index]["dni"] + `</td>
                     <td name="nombre">` + response[index]["nombre"] + `</td>
@@ -132,8 +136,8 @@ function printResponse(index,response){
                     <td name="telefono">` + response[index]["telefono"] + `</td>
                     <td name="especialidad">` + response[index]["especialidad_id"] + `</td>
                     <td name="horario">` + response[index]["horario_id"] + `</td>
-                    <td name="delete_button"><button id="delete_reg`+index+`" name="`+index+`" class="btn btn-danger" >x</button></td>
-                    <td name="edit_button"><button id="edit_reg`+index+`" name="`+index+`" class="btn btn-warning">Editar</button></td>
+                    <td name="delete_button"><button id="delete_reg_`+index+`" name="`+index+`" class="btn btn-danger" >x</button></td>
+                    <td name="edit_button"><button id="edit_reg_`+index+`" name="`+index+`" class="btn btn-warning">Editar</button></td>
                 </tr>`;
     $("#myTableData").append(fila);
 }
