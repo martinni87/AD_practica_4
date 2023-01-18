@@ -27,6 +27,15 @@ header
 {
     padding-left: 80px;
 }
+.form
+{
+    padding: 1em;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 0 15px gray;
+    margin-bottom: 2em;
+}
 .article
 {
     display: flex;

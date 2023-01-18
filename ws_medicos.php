@@ -27,7 +27,7 @@ switch (strtolower($_GET["action"])){
 
         break;
     case "create":
-        //Parametros Ajax
+        //Parametros Ajax introducidos
         $numero_colegiado   = $_GET["numero_colegiado"];
         $dni                = $_GET["dni"];
         $nombre             = $_GET["nombre"];
@@ -37,12 +37,14 @@ switch (strtolower($_GET["action"])){
         $especialidad_id    = $_GET["especialidad_id"];
         $horario_id         = $_GET["horario_id"];
 
+        $array = array();
+        $array["nombre"] = $numero_colegiado;
         //Instanciamos un objeto de médico con los datos introducidos
         // $data = new Medico("",$dni,$nombre,$apellido1,$apellido2,$telefono,/*$sexo,*/"",$numero_colegiado,$especialidad_id,$horario_id);
 
         // echo $data -> setNewData($connection, $data);
 
-        echo $nombre;
+        echo json_encode($array);
 
 
         break;

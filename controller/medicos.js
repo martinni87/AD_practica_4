@@ -33,7 +33,7 @@ $(document).ready(function(){
 
     $("#submit_new").click(function(){
         $.ajax({
-            method: "POST",
+            method: "GET",
             url:"ws_medicos.php?action=create",
             data:{
                 numero_colegiado: $("#numero_colegiado").val(),

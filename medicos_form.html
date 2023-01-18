@@ -34,7 +34,7 @@
             </div>
         </nav>
     </header>
-    <fieldset>
+    <div class="form">
         <legend>Formulario Médicos</legend>
         <!-- Campos a rellenar -->
         <label for="numero_colegiado">Nº Colegiado: </label><input type="number" name="numero_colegiado" id="numero_colegiado" placeholder="146502" title="Escribe un número de colegiado">
@@ -49,7 +49,7 @@
         <button type='submit' name="submit" id="submit_new" class="btn btn-secondary">Enviar</button>
         <button type='reset' name='reset' id='reset_button' class="btn btn-secondary">Cancelar</button>
         <button type="button" name="return" id="return" class="btn btn-secondary" onclick="location.href='medicos_list.html'">Volver</button>
-    </fieldset>
+    </div>
     <!-- Contenedor ajax_response donde se la respuesta favorable o desfavorable si el registro ha podido o no realizarse -->
     <div id="ajax_response"></div>
 </body>

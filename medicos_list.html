@@ -35,7 +35,7 @@
         </nav>
     </header>
     <main>
-        <fieldset>
+        <div class="form">
             <legend>Buscador de médicos</legend>
             <!-- Campos a rellenar -->
             <label for="nombre">Nombre: </label><input type="text" name="nombre" id="nombre" placeholder="Juan Antonio" title="Escribe un nombre">
@@ -44,11 +44,11 @@
             <!-- Botones de acciones Buscar y Limpiar -->
             <button type="submit" name="search_button" id="search_button" class="btn btn-primary">Buscar</button>
             <button type="reset" name="reset_button" id="reset_button" class="btn btn-danger">Limpiar</button>
-        </fieldset>
-        <br>
-        <!-- Botón crear nuevo registro. Redirige a formulario de medicos para crear nuevo registro -->
-        <button type="button" name="new_element" id="new_element" class="btn btn-secondary" onclick="location.href=location.href='medicos_form.html'">Nuevo registro</button>
-        <br><br>
+            <br><br>
+            <!-- Botón crear nuevo registro. Redirige a formulario de medicos para crear nuevo registro -->
+            <button type="button" name="new_element" id="new_element" class="btn btn-secondary" onclick="location.href=location.href='medicos_form.html'">Nuevo registro</button>
+            <br><br>
+        </div>
         <!-- Contenedor ajax_response donde se escriben los datos procesados que devuelve la búsqueda -->
         <div id="ajax_response"></div>
     </main>
