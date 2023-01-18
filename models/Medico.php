@@ -176,14 +176,14 @@ class Medico extends Persona{
         //Creamos dos array que recibirán los datos que el usuario introduzca en las celdas.
         //Creamos un array que parametrizará los datos introducidos para añadirlos a la query
         // $sql_columns = array();
-        // $sql_values = array();
-        // $parameters = array();
+        $sql_values = array();
+        $parameters = array();
 
         // //Añadimos los datos que identifican las columnas y sus respectivos valores en el formulario de registro
-        // $sql_inputData = $this -> setParameters($data);
+        $sql_inputData = $this -> setParameters($data);
         // $sql_columns = $sql_inputData["columns"];
-        // $sql_values = $sql_inputData["values"];
-        // $parameters = $sql_inputData["parameters"];
+        $sql_values = $sql_inputData["values"];
+        $parameters = $sql_inputData["parameters"];
         // $parameters[":dni"]                 = $data["dni"];
         // $parameters[":numero_colegiado"]    = $data["numero_colegiado"];
         // $parameters[":nombre"]              = $data["nombre"];
@@ -196,21 +196,17 @@ class Medico extends Persona{
         $sql = "INSERT INTO medicos
                             (dni,numero_colegiado,nombre,apellido1,
                             apellido2,especialidad_id,horario_id)
-                    VALUES  (" .$data["nombre"] ;
-                        
-                        // :dni,:numero_colegiado,:nombre,:apellido1
-                        //     :apellido2,:especialidad_id,:horario_id)";
-        // $separator = ",";
+                    VALUES  (";
+        $separator = ",";
 
         // //Concatenamos para construir la query completa
         // $sql .= implode($separator,$sql_columns);
         // $sql .= ') VALUES (';
-        // $sql .= implode($separator, $sql_values);
-        // $sql .= ')';
+        $sql .= implode($separator, $sql_values);
+        $sql .= ')';
 
-        // $statement = $connection -> prepare($sql);
-        // $statement -> execute($parameters);
-        // $statement -> execute($parameters);
+        $statement = $connection -> prepare($sql);
+        $statement -> execute($parameters);
 
         return json_encode($sql);
     }

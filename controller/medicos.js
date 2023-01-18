@@ -2,7 +2,7 @@ $(document).ready(function(){
     $("#search_button").click(function(){
         $.ajax({
             method: "GET",
-            url:"ws_index.php",
+            url:"ws_medicos.php",
             data:{
                 nombre: $("#nombre").val(),
                 apellido1: $("#apellido1").val(),
@@ -34,8 +34,7 @@ $(document).ready(function(){
     $("#submit_new").click(function(){
         $.ajax({
             method: "POST",
-            action: "post",
-            url:"ws_index.php",
+            url:"ws_medicos.php",
             data:{
                 numero_colegiado: $("#numero_colegiado").val(),
                 dni: $("#dni").val(),
@@ -58,7 +57,7 @@ $(document).ready(function(){
     $("#submit_edit").click(function(){
         $.ajax({
             method: "PUT",
-            url:"ws_index.php",
+            url:"ws_medicos.php",
             data:{
 
             },
@@ -80,9 +79,9 @@ $(document).ready(function(){
     $("#delete_reg").click(function(){
         $.ajax({
             method: "DEL",
-            url:"ws_index.php",
+            url:"ws_medicos.php",
             data:{
-                user_id:"",
+                dni:$("#dni").val,
             },
             dataType: "json",
         })
