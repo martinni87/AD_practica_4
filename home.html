@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="vendor/jquery-3.6.1.min.js"></script>
     <script src="controller/medicos.js"></script>
+    <link rel="stylesheet" href="./css/menu_styles.css">
 </head>
 <body>
     <!-- Cabecera con menú de navegación -->
@@ -36,18 +37,16 @@
 
     <main class="main" id="main">
         <article class="article" id="article1" name="article1">
-            <div class="title" id="article1_title" name="article1_title">
-                <h2>¡Bienvenido</h2>
-            </div>
+            <h2 class="title" id="article1_title" name="article1_title">Bienvenido</h2>
             <div class="article_content" id="article1_content" name="article1_content">
-                <p>Puede navegar con la barra superior para ver listados de médicos, pacientes y citas, e interactuar con estos.</p>
+                <h3 class="article_subtitle">Puede navegar con la barra superior para ver listados de médicos, pacientes y citas, e interactuar con estos.</h3>
                 <p><strong>Acciones permitidas</strong></p>
-                <ul>
-                    <li>Ver listados filtrados</li>
-                    <li>Insertar nuevos registros</li>
-                    <li>Eliminar registros existentes</li>
-                    <li>Actualizar campos de registros existentes</li>
-                </ul>
+                <div>
+                    <p>Ver listados filtrados</p>
+                    <p>Insertar nuevos registros</p>
+                    <p>Eliminar registros existentes</p>
+                    <p>Actualizar campos de registros existentes</p>
+                </div>
             </div>
         </article>
     </main>
